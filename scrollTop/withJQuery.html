@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scroll to top with JQuery</title>
+    <style media="screen">
+      .whiteboard {
+        position: relative;
+        display:block;
+        margin: auto;
+        margin-top:100px;
+        width: 600px;
+        height: 1000px;
+        background-color: green;
+      }
+      .btn {
+        position: absolute;
+        width: 600px;
+        height: 50px;
+        top: 0px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="whiteboard" id="one">
+      <button type="button" class="btn" id="up">up to the second board</button>
+    </div>
+    <div class="whiteboard" id="two">
+      <button type="button" class="btn" id="bottom">up to the first board</button>
+    </div>
+    <script src="../public/js/jquery-1.11.3.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#up').click(function() {
+          $('html, body').animate({
+            scrollTop: $('#two').offset().top
+        }, 666);
+      });
+        $('#bottom').click(function() {
+          $('html, body').animate({
+            scrollTop: $('#one').offset().top
+        }, 666);
+        })
+      })
+    </script>
+  </body>
+</html>
