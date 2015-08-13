@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="slide">
+  <head>
+    <meta charset="utf-8">
+    <title>x-slide</title>
+    <link rel="stylesheet" href="./style.css" media="screen" charset="utf-8">
+  </head>
+  <body>
+    <div class="container" ng-controller="slideController as slideX">
+      <div class="img-container" style="left: {{slideX.offset}}px">
+        <img ng-repeat="x in slideX.list" src="{{x}}" alt="" />
+      </div>
+      <ol>
+        <li ng-repeat="l in slideX.locate" ng-class="{active: slideX.isActive(l)}" ng-click="slideX.toggle($index)">{{l}}</li>
+      </ol>
+    </div>
+
+  <script src="../public/js/angular.js" charset="utf-8"></script>
+  <script src="./xslide.js" charset="utf-8"></script>
+  </body>
+</html>
